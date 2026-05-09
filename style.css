@@ -1,0 +1,16 @@
+*, *::before, *::after { box-sizing: border-box; margin:0; padding: 0; }
+
+:root {
+    --cream: #F8F4EC;
+    --beige: #EDE8DC;
+    --brown: #8B6F47;
+    --charcoal: #2C2C2C;
+    --terracotta: #C4714A;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+}
+
