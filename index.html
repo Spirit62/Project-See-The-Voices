@@ -5,25 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project See The Voices Nepal</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
+
   <nav>
-    <div class="nav-logo">See The Voices</div>
-    <ul class="nav-links">
-      <li><a href="#wall">The Wall</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#workshops">Workshops</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-logo">Project See The<span> Voices</span></div>
+    <a href="Sections/team.html" class="nav-team-btn">Meet the Team</a>
   </nav>
 
   <section class="hero">
-    <div class="hero-bg-word">VOICES</div>
 
     <div class="tape t1"></div>
     <div class="tape t2"></div>
-    <div class="tpe t3"></div>
 
     <div class="sticker st1">Inclusion<br/>Starts Here</div>
     <div class="sticker st3">Student-Led</div>
@@ -35,16 +29,13 @@
         Your voice.<br/>
         <em>Our strength.</em>
       </h1>
-      <p class="hero-body">A student movement promiting sign language awarness and inclusion around Nepal. Every voice matters, especially the ones we haven't learned to hear yet.</p>
+      <p class="hero-body">A student movement promoting sign language awareness and inclusion across Nepal. Every voice matters — especially the ones we haven't learned to hear yet.</p>
       <div class="hero-btns">
-        <a href="#board" class="btn-solid">See the board ↓</a>
-        <a href="#about" class="btn-outline">About us →</a>
+        <a href="#board" class="btn-solid">See the board</a>
+        <a href="#photos" class="btn-outline">Our workshops</a>
       </div>
     </div>
 
-    <div class="doddle-row">
-      <span>✦</span><span>♡</span><span>✿</span><span>→</span><span>★</span>
-    </div>
   </section>
 
   <section class="board-section" id="board">
@@ -52,64 +43,113 @@
     <div class="board-label">
       <div class="board-tape"></div>
       <h2>The Board</h2>
-    </div>
-
-    <div class="filters">
-      <button class="f active" data-f="all">All</button>
-      <button class="f" data-f="experience">Experiences</button>
-      <button class="f" data-f="message">Messages</button>
-      <button class="f" data-f="learning">Learnings</button>
+      <p>Real words. Real students. Real feelings.</p>
     </div>
 
     <div class="board" id="board-grid">
 
       <div class="note yellow" data-f="experience" style="--r:2deg;--delay:0s">
         <div class="pushpin"></div>
-        <p>"This changed the way I see communication."</p>
-        <div class="corner-doodle">✦</div>
+        <p>Signs are to eyes what words are to ears.</p>
       </div>
 
       <div class="note pink" data-f="message" style="--r:-3deg;--delay:0.05s">
         <div class="pushpin"></div>
-        <p>"I practised the signs with my family."</p>
-        <div class="corner-doodle">★</div>
+        <p>Hands say things words never could.</p>
       </div>
 
-      <div class="note-paper" data-f="experience" style="--r:-1deg;--delay:0.15s">
+      <div class="note-paper" data-f="experience" style="--r:-1deg;--delay:0.1s">
         <div class="paper-lines"></div>
         <div class="paper-hole"></div>
-        <p>"Inclusion starts with us."</p>
+        <p>Silence isn't empty. I just never knew how to listen to it.</p>
       </div>
+
+      <div class="note blue" data-f="learning" style="--r:3deg;--delay:0.15s">
+        <div class="pushpin"></div>
+        <p>I keep signing words to myself when no one's watching.</p>
+      </div>
+
+      <div class="note green" data-f="message" style="--r:-2deg;--delay:0.2s">
+        <div class="pushpin"></div>
+        <p>There's a whole conversation happening around us we never noticed.</p>
+      </div>
+
+      <div class="note-torn" data-f="message" style="--r:1deg;--delay:0.25s">
+        <p>To be understood is everything. I get that now.</p>
+      </div>
+
+      <div class="note yellow" data-f="learning" style="--r:-4deg;--delay:0.3s">
+        <div class="pushpin"></div>
+        <p>Walked home slower. Noticed more. Don't know why.</p>
+      </div>
+
+      <div class="note pink" data-f="experience" style="--r:2deg;--delay:0.35s">
+        <div class="pushpin"></div>
+        <p>Something small shifted. The good kind of shift.</p>
+      </div>
+
+      <div class="note-paper" data-f="message" style="--r:1deg;--delay:0.4s">
+        <div class="paper-lines"></div>
+        <div class="paper-hole"></div>
+        <p>Language is just people trying to reach each other. Always has been.</p>
+      </div>
+
+      <div class="note blue" data-f="learning" style="--r:-1deg;--delay:0.45s">
+        <div class="pushpin"></div>
+        <p>I never thought about what it means to not be heard.</p>
+      </div>
+
+      <div class="note green" data-f="experience" style="--r:3deg;--delay:0.5s">
+        <div class="pushpin"></div>
+        <p>We were all strangers signing badly together. It was kind of beautiful.</p>
+      </div>
+
+      <div class="note-torn" data-f="experience" style="--r:-2deg;--delay:0.55s">
+        <p>Didn't change my life. Just made me pay attention.</p>
+      </div>
+
     </div>
   </section>
 
   <section class="photo-section" id="photos">
     <div class="photo-label">
       <h2>From The Workshops</h2>
-      <p>Moments Pinned</p>
+      <p>Moments pinned to memory</p>
     </div>
     <div class="photo-wall">
 
       <div class="polaroid" style="--r:-4deg;">
+        <div class="pol-img">
+          <img src="images/trinity.jpg" alt="Workshop at Trinity +2" />
+        </div>
         <p>Trinity +2</p>
         <div class="pol-tape"></div>
       </div>
 
-      <div class="polaroid" style="--r:-2deg;">
+      <div class="polaroid" style="--r:2deg;">
+        <div class="pol-img">
+          <img src="images/clinton.jpg" alt="Leo Club, Clinton School" />
+        </div>
         <p>Leo Club, Clinton School</p>
         <div class="pol-tape"></div>
       </div>
 
-      <div class="polaroid" style="--r:-1deg">
-        <p>Baal Sewa Foundation (IC MATRIBHUMI)</p>
+      <div class="polaroid" style="--r:-1deg;">
+        <div class="pol-img">
+          <img src="images/baalsewa.jpg" alt="Baal Sewa Foundation" />
+        </div>
+        <p>Baal Sewa Foundation<br/><small>IC Matribhumi</small></p>
+        <div class="pol-tape"></div>
       </div>
+
     </div>
   </section>
 
   <footer id="contact">
-    <p class="f-logo">Project See The Voices</p>
-    <p>Student Led · Sign Language · Inclusion</p>
-    <p class="f-small">Made with ♡ by students</p>
+    <p class="f-logo">See The Voices Nepal</p>
+    <p>Student-Led · Sign Language · Inclusion</p>
+    <p>seethevoicesnepal@gmail.com</p>
+    <p class="f-small">Made with love by students, for everyone.</p>
   </footer>
 
   <script src="script.js"></script>
