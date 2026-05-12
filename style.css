@@ -141,14 +141,59 @@ nav {
   text-decoration-thickness: 3px;
 }
 
-.hero-body {
+.hero-headline-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.headline-tape {
+  width: 52px;
+  height: 18px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+  transform: rotate(-2deg);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.62) 0px,
+    rgba(255,248,180,0.78) 4px,
+    rgba(255,240,140,0.62) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero-note {
+  position: relative;
+  background: #FEFCF8;
+  max-width: 440px;
+  margin: 0 auto 36px;
+  padding: 18px 20px 22px 20px;
+  border-radius: 2px;
+  border-left: 4px solid #E8A0A0;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.05), 4px 8px 18px rgba(0,0,0,0.1);
+  transform: rotate(-0.5deg);
+  text-align: left;
+  overflow: hidden;
+}
+
+.hero-note-lines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 26px,
+    rgba(160,200,220,0.3) 27px
+  );
+  pointer-events: none;
+}
+
+.hero-note p {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: var(--charcoal);
-  opacity: 0.68;
-  max-width: 460px;
-  margin: 0 auto 38px;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.78;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -181,9 +226,12 @@ nav {
 .btn-outline:hover { background: rgba(122,92,56,0.06); border-color: var(--brown); }
 
 .about-section {
-  padding: 96px 48px;
-  background: var(--beige);
-  border-top: 1.5px solid rgba(122,92,56,0.08);
+  min-height: 100vh;
+  padding: 80px 48px;
+  background: var(--cream);
+  border-top: none;
+  display: flex;
+  align-items: center;
 }
 
 .about-inner {
@@ -238,6 +286,13 @@ nav {
   margin-bottom: 16px;
 }
 .about-text p:last-child { margin-bottom: 0; }
+
+.about-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
 
 .about-stats {
   display: grid;
@@ -592,6 +647,8 @@ footer p {
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
   .hero { padding: 60px 20px 32px; }
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-section { padding: 64px 24px; }
   .sticker { display: none; }
   .board-section { padding: 60px 20px; }
   .board { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 22px; }
