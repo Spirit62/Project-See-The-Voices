@@ -180,7 +180,117 @@ nav {
 }
 .btn-outline:hover { background: rgba(122,92,56,0.06); border-color: var(--brown); }
 
+.about-section {
+  padding: 96px 48px;
+  background: var(--beige);
+  border-top: 1.5px solid rgba(122,92,56,0.08);
+}
 
+.about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-tape {
+  width: 56px;
+  height: 18px;
+  margin-bottom: 20px;
+  transform: rotate(-3deg);
+  border-radius: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.62) 0px,
+    rgba(255,248,180,0.78) 4px,
+    rgba(255,240,140,0.62) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.about-label {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+
+.about-text h2 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.about-text p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal);
+  opacity: 0.72;
+  margin-bottom: 16px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 12px;
+}
+
+.stat-card {
+  background: #FEFCF8;
+  padding: 24px 20px 28px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.06), 4px 8px 20px rgba(0,0,0,0.1);
+  transform: rotate(var(--r, 0deg));
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative;
+  text-align: center;
+}
+.stat-card:hover {
+  transform: rotate(0deg) scale(1.04) translateY(-3px);
+  z-index: 10;
+}
+
+.stat-tape {
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 44px; height: 16px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.62) 0px,
+    rgba(255,248,180,0.78) 4px,
+    rgba(255,240,140,0.62) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--terra);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.88rem;
+  color: var(--brown);
+  opacity: 0.8;
+}
 
 .board-section {
   padding: 88px 40px;

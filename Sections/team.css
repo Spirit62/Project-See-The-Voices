@@ -235,9 +235,64 @@ nav {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 80px;
+}
+
+.divider-tape {
+  height: 22px;
+  flex: 1;
+  max-width: 120px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.55) 0px,
+    rgba(255,248,180,0.72) 4px,
+    rgba(255,240,140,0.55) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transform: rotate(-1deg);
+}
+
+.divider-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2A1F10;
+  background: #FEFCF8;
+  padding: 6px 24px 8px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.07), 3px 5px 14px rgba(0,0,0,0.12);
+  transform: rotate(-1deg);
+  position: relative;
+}
+.divider-label::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  width: 48px; height: 18px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.62) 0px,
+    rgba(255,248,180,0.78) 4px,
+    rgba(255,240,140,0.62) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 .mentor-section {
   padding: 80px 40px 100px;
-  background: var(--cream);
+  background-color: #B8A888;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(80,60,20,0.06) 3px, rgba(80,60,20,0.06) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(80,60,20,0.06) 3px, rgba(80,60,20,0.06) 4px);
+  box-shadow: inset 0 6px 32px rgba(0,0,0,0.12), inset 0 -6px 32px rgba(0,0,0,0.08);
 }
 
 .mentor-label {
@@ -275,10 +330,19 @@ nav {
 }
 
 .mentor-card .member-photo {
-  height: 280px;
+  height: 300px;
 }
 
+.mentor-card .card-tape {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(200,223,245,0.7) 0px,
+    rgba(220,235,255,0.85) 4px,
+    rgba(200,223,245,0.7) 8px
+  );
+}
 
+footer {
   background: #1A1410;
   color: rgba(245,240,232,0.55);
   padding: 52px 24px;
