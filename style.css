@@ -235,12 +235,8 @@ nav {
 }
 
 .about-inner {
-  max-width: 1100px;
+  max-width: 680px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 72px;
-  align-items: start;
   width: 100%;
 }
 
