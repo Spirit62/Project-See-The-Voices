@@ -687,21 +687,84 @@ footer p {
   font-size: 0.9rem;
   line-height: 2;
 }
+.f-insta-label {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  margin-top: 12px;
+}
+
+.f-insta {
+  display: inline-block;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.9rem;
+  color: rgba(245,240,232,0.65);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245,240,232,0.25);
+  transition: color 0.2s, border-color 0.2s;
+  line-height: 2;
+}
+.f-insta:hover { color: rgba(245,240,232,0.95); border-color: rgba(245,240,232,0.6); }
+
 .f-small { margin-top: 20px; opacity: 0.35; font-size: 0.78rem; }
 
 @media (max-width: 768px) {
-  nav { padding: 14px 20px; }
-  .nav-links { display: none; }
-  .hero { padding: 60px 20px 32px; }
-  .about-inner { grid-template-columns: 1fr; gap: 48px; }
-  .about-section { padding: 64px 24px; }
-  .about-right { padding-top: 0; }
-  .sticker { display: none; }
-  .board-section { padding: 60px 20px; }
-  .board { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 22px; }
-  .photo-section { padding: 60px 20px; }
-  .photo-wall { gap: 28px; }
-  .polaroid { width: 155px; }
-  .hero-signs { gap: 16px; }
-  .hero-signs span { font-size: 1.6rem; }
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-team-btn {
+    padding: 60px 20px 72px;
+    min-height: unset;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-right {
+    padding-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-note {
+    width: calc(50% - 12px);
+  }
+
+  .about-note-torn {
+    width: 100%;
+  }
+
+  .board-section {
+    padding: 60px 20px;
+  }
+
+  .board {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+  }
+
+  .photo-section {
+    padding: 60px 2px;
+  }
+
+  .photo-wall {
+    gap: 24px;
+  }
+
+  .polaroid {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-right { flex-direction: column; }
+  .about-note { width: 100%; }
+  .board { grid-template-columns: 1fr 1fr;
+  gap: 16px;}
 }
