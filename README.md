@@ -1,7 +1,7 @@
 # Project See The Voices Nepal
 
 ## What It Is
-A student-led website for Project See The Voices Nepal, a sign language awareness and inclusion initiative run by students. The site features a community board of student reflections, workshop documentation, and a team page.
+A website for Project See The Voices Nepal, a sign language awareness and inclusion initiative run by students. The site features a community board of student reflections, workshop documentation, and a team page.
 
 ## Why I Made It
 The project needed a home that felt like it was actually made by students, and not a generic NGO template. So, I decided to go with a more fun route and made it paper themed.
