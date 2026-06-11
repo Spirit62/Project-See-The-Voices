@@ -1,4 +1,4 @@
-/* Import global styles */
+
 @import url('../global.css');
 
 /* ========== TEAM PAGE SPECIFIC STYLES ========== */
@@ -338,7 +338,20 @@ footer p {
 
 @media (max-width: 768px) {
   nav {
-    padding: 14px 20px;
+    padding: 14px 18px;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .nav-back {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
   }
 
   .team-hero {
@@ -357,15 +370,18 @@ footer p {
     padding: 28px 20px;
   }
 
-  .team-grid {
+  .team-grid,
+  .mentor-grid {
     gap: 32px;
   }
 
-  .member-card {
-    width: 155px;
+  .member-card,
+  .mentor-card {
+    width: calc(50% - 10px);
   }
 
-  .member-photo {
+  .member-photo,
+  .mentor-card .member-photo {
     height: 190px;
   }
 
@@ -374,40 +390,24 @@ footer p {
   }
 
   .member-quote {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
   }
+}
 
+@media (max-width: 520px) {
+  .team-grid,
   .mentor-grid {
-    gap: 32px;
+    gap: 22px;
   }
 
+  .member-card,
   .mentor-card {
-    width: 155px;
+    width: 100%;
   }
 
+  .member-photo,
   .mentor-card .member-photo {
-    height: 190px;
+    height: 170px;
   }
 }
 
-@media (max-width: 480px) {
-  .team-grid {
-    gap: 20px;
-  }
-
-  .member-card {
-    width: calc(50% - 10px);
-  }
-
-  .mentor-card {
-    width: calc(50% - 10px);
-  }
-
-  .member-photo {
-    height : 160px;
-  }
-
-  .mentor-card .member-photo {
-    height: 160px;
-  }
-}

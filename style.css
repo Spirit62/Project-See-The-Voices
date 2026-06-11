@@ -735,61 +735,227 @@ footer p {
 
 .f-small { margin-top: 20px; opacity: 0.35; font-size: 0.78rem; }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   nav {
-    padding: 14px 20px;
+    padding: 12px 18px;
+  }
+
+  .nav-right {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .nav-team-btn {
-    padding: 60px 20px 72px;
-    min-height: unset;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    box-shadow: 2px 2px 0 rgba(122,60,30,0.25);
   }
 
+  .hero {
+    padding: 60px 18px 40px;
+  }
+
+  .hero-center {
+    max-width: 560px;
+  }
+
+  .hero-note {
+    max-width: 100%;
+    margin-bottom: 24px;
+    padding: 16px 18px 20px;
+  }
+
+  .hero-btns {
+    gap: 10px;
+  }
+
+  .about-section {
+    padding: 72px 18px 72px;
+  }
+
+  .about-content-wrapper,
   .about-inner {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 28px;
+    padding: 24px 0;
   }
 
-  .about-right {
-    padding-top: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .about-essay {
+    padding: 32px 28px;
+  }
+
+  .about-essay p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .about-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-btns {
     justify-content: center;
-  }
-
-  .about-note {
-    width: calc(50% - 12px);
-  }
-
-  .about-note-torn {
-    width: 100%;
+    gap: 12px;
   }
 
   .board-section {
-    padding: 60px 20px;
+    padding: 64px 18px 72px;
   }
 
   .board {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
-  }
-
-  .photo-section {
-    padding: 60px 2px;
-  }
-
-  .photo-wall {
     gap: 24px;
   }
 
+  .photo-section {
+    padding: 64px 18px;
+  }
+
+  .photo-wall {
+    gap: 28px;
+  }
+
   .polaroid {
-    width: 140px;
+    width: 160px;
+  }
+
+  footer {
+    padding: 42px 18px 36px;
   }
 }
 
-@media (max-width: 480px) {
-  .about-right { flex-direction: column; }
-  .about-note { width: 100%; }
-  .board { grid-template-columns: 1fr 1fr;
-  gap: 16px;}
+@media (max-width: 680px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .nav-left {
+    justify-content: center;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-team-btn,
+  .btn-solid,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 50px 16px 36px;
+  }
+
+  .hero-center h1 {
+    font-size: clamp(2.8rem, 13vw, 4.8rem);
+  }
+
+  .about-essay {
+    padding: 28px 22px;
+  }
+
+  .about-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .note,
+  .note-paper,
+  .note-torn {
+    padding: 20px 16px 24px;
+  }
+
+  .note-paper {
+    padding-left: 18px;
+  }
+
+  .photo-wall {
+    gap: 22px;
+    justify-content: center;
+  }
+
+  .polaroid {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .member-card,
+  .mentor-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 40px 14px 32px;
+  }
+
+  .hero-center h1 {
+    font-size: clamp(2.4rem, 16vw, 4.2rem);
+  }
+
+  .hero-btns {
+    gap: 10px;
+  }
+
+  .about-section {
+    padding: 56px 14px 60px;
+  }
+
+  .about-essay {
+    padding: 24px 18px;
+  }
+
+  .about-essay p {
+    font-size: 1rem;
+  }
+
+  .about-image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .board-section {
+    padding: 52px 14px 60px;
+  }
+
+  .board {
+    gap: 16px;
+  }
+
+  .note,
+  .note-paper,
+  .note-torn {
+    padding: 18px 14px 20px;
+  }
+
+  .photo-section {
+    padding: 52px 14px;
+  }
+
+  .polaroid {
+    width: 100%;
+  }
+
+  footer {
+    padding: 36px 14px 32px;
+  }
 }
