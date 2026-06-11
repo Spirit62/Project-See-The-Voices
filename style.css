@@ -1,51 +1,12 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Import global styles */
+@import url('./global.css');
 
-:root {
-  --cream: #F5F0E8;
-  --beige: #EAE3D2;
-  --brown: #7A5C38;
-  --charcoal: #1E1A16;
-  --terra: #B85C38;
-  --yellow: #F9EFA0;
-  --pink: #F5CECE;
-  --blue: #C8DFF5;
-  --green: #C8E8C8;
-  --ink: #2A2018;
-  --sh: rgba(30,20,10,0.13);
-}
+/* ========== HOME PAGE SPECIFIC STYLES ========== */
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--cream);
-  color: var(--charcoal);
-  overflow-x: hidden;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 48px;
-  background: var(--cream);
-  border-bottom: 1.5px solid rgba(122,92,56,0.12);
-  position: sticky;
-  top: 0;
-  z-index: 300;
-}
-
-.nav-logo {
-  font-family: 'Caveat', cursive;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--charcoal);
-}
-.nav-logo span { color: var(--terra); }
-
+/* Navigation button - specific to home page */
 .nav-team-btn {
   font-family: 'Patrick Hand', cursive;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   text-decoration: none;
   color: var(--charcoal);
   border: 1.5px solid rgba(122,92,56,0.35);
@@ -76,19 +37,6 @@ nav {
   background: var(--cream);
 }
 
-.tape {
-  position: absolute;
-  height: 26px;
-  border-radius: 1px;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,240,140,0.55) 0px,
-    rgba(255,248,180,0.72) 4px,
-    rgba(255,240,140,0.55) 8px
-  );
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
 .t1 { width: 96px; top: 12%; left: 8%; transform: rotate(-11deg); }
 .t2 { width: 72px; bottom: 18%; right: 7%; transform: rotate(7deg); }
 
@@ -102,13 +50,7 @@ nav {
   pointer-events: none;
   box-shadow: 2px 2px 0 rgba(0,0,0,0.07), 3px 5px 14px rgba(0,0,0,0.1);
 }
-.sticker::after {
-  content: '';
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 14px; height: 14px;
-  background: linear-gradient(225deg, rgba(0,0,0,0.09) 50%, transparent 50%);
-}
+
 .st1 { background: var(--yellow); bottom: 22%; left: 5%; transform: rotate(-7deg); }
 .st3 { background: var(--blue); top: 15%; left: 7%; transform: rotate(-2deg); font-size: 0.8rem; }
 
@@ -226,8 +168,8 @@ nav {
 .btn-outline:hover { background: rgba(122,92,56,0.06); border-color: var(--brown); }
 
 .about-section {
-  min-height: 100vh;
-  padding: 88px 52px 96px 48px;
+  min-height: auto;
+  padding: 88px 32px 96px 32px;
   background: var(--cream);
   border-top: none;
   display: flex;
@@ -235,14 +177,28 @@ nav {
 }
 
 .about-inner {
-  max-width: 680px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-.about-left { position: relative; }
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
 
-.about-tape {
+.about-label {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terra);
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+
+.about-header .about-tape {
+  display: inline-block;
   width: 56px;
   height: 18px;
   margin-bottom: 20px;
@@ -257,60 +213,128 @@ nav {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.about-label {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--terra);
-  opacity: 0.8;
-  margin-bottom: 14px;
-}
 
-.about-left h2 {
+.about-header h2 {
   font-family: 'Caveat', cursive;
   font-size: clamp(1.9rem, 3.8vw, 2.8rem);
   font-weight: 700;
   color: var(--charcoal);
   line-height: 1.18;
-  margin-bottom: 24px;
+  margin-top: 12px;
 }
 
-.about-body-paper {
+
+.about-content-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 40px;
+  margin-bottom: 48px;
+  padding: 40px 20px;
+  align-items: start;
   position: relative;
+}
+
+
+.about-essay {
+  grid-column: 2;
+  grid-row: 1 / 5;
   background: #FEFCF8;
-  padding: 20px 20px 24px 52px;
+  padding: 48px 42px;
   border-left: 4px solid #E8A0A0;
   border-radius: 2px;
   box-shadow: 2px 2px 0 rgba(0,0,0,0.05), 4px 8px 18px rgba(0,0,0,0.09);
   transform: rotate(-0.4deg);
+  position: relative;
   overflow: hidden;
-  margin-bottom: 32px;
+  width: 100%;
+  justify-self: center;
 }
-.about-body-paper .paper-lines {
-  position: absolute; inset: 0;
+
+.about-essay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: repeating-linear-gradient(
     transparent, transparent 26px,
     rgba(160,200,220,0.3) 27px
   );
   pointer-events: none;
 }
-.about-body-paper p {
+
+.about-essay p {
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.02rem;
-  line-height: 1.9;
+  font-size: 1.12rem;
+  line-height: 2;
   color: var(--ink);
-  opacity: 0.72;
-  margin-bottom: 12px;
+  opacity: 0.78;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
-.about-body-paper p:last-child { margin-bottom: 0; }
+
+.about-essay p:last-child {
+  margin-bottom: 0;
+}
+
+
+.about-image {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(184, 92, 56, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--beige);
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--terra);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(184, 92, 56, 0.35);
+}
+
+
+.about-image-1 {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.about-image-2 {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.about-image-3 {
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: center;
+}
+
+.about-image-4 {
+  grid-column: 3;
+  grid-row: 4;
+  justify-self: center;
+}
+
 
 .about-btns {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-right {
@@ -468,12 +492,17 @@ nav {
 }
 
 .note, .note-paper, .note-torn {
-  transform: rotate(var(--r, 0deg));
-  animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
-  animation-delay: var(--delay, 0s);
-  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(24px) rotate(var(--r, 0deg)) scale(0.96);
+  transition: opacity 0.45s ease var(--delay, 0s),
+              transform 0.45s ease var(--delay, 0s),
+              box-shadow 0.2s ease;
   position: relative;
   cursor: default;
+}
+.note.visible, .note-paper.visible, .note-torn.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--r, 0deg)) scale(1);
 }
 .note:hover, .note-paper:hover, .note-torn:hover {
   transform: rotate(0deg) scale(1.06) translateY(-5px);

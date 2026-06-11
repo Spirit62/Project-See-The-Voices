@@ -1,0 +1,124 @@
+/* ========== GLOBAL ROOT CSS ========== */
+/* Shared styles across all pages */
+
+/* Reset */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* CSS Variables */
+:root {
+  --cream: #F5F0E8;
+  --beige: #EAE3D2;
+  --brown: #7A5C38;
+  --charcoal: #1E1A16;
+  --terra: #B85C38;
+  --yellow: #F9EFA0;
+  --pink: #F5CECE;
+  --blue: #C8DFF5;
+  --green: #C8E8C8;
+  --ink: #2A2018;
+  --sh: rgba(30,20,10,0.13);
+}
+
+/* HTML & Body */
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 48px;
+  background: var(--cream);
+  border-bottom: 1.5px solid rgba(122,92,56,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-left:hover {
+  opacity: 0.9;
+}
+
+.nav-logo-img {
+  width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 2px solid var(--terra);
+  box-shadow: 0 2px 8px rgba(184, 92, 56, 0.25);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-logo-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.35);
+}
+
+.nav-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: var(--terra);
+}
+
+.nav-logo span { 
+  color: var(--terra); 
+}
+.nav-right{
+  display:flex;
+  flex-direction: row;
+  gap:20px;
+}
+/* ========== TAPE ELEMENTS ========== */
+.tape {
+  position: absolute;
+  height: 26px;
+  border-radius: 1px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,240,140,0.55) 0px,
+    rgba(255,248,180,0.72) 4px,
+    rgba(255,240,140,0.55) 8px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ========== STICKER ELEMENTS ========== */
+.sticker::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(225deg, rgba(0,0,0,0.09) 50%, transparent 50%);
+}
