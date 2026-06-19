@@ -1,426 +1,188 @@
-
 @import url('../global.css');
 
-/* ========== TEAM PAGE SPECIFIC STYLES ========== */
-
-
-.nav-back {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.95rem;
-  text-decoration: none;
-  color: var(--charcoal);
-  border: 1.5px solid rgba(122,92,56,0.35);
-  padding: 8px 22px;
-  border-radius: 3px;
-  box-shadow: 2px 3px 0 rgba(122,60,30,0.18);
-  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-}
-.nav-back:hover {
-  background: var(--terra);
-  color: #fff;
-  border-color: var(--terra);
-  transform: translate(-1px, -2px);
-  box-shadow: 3px 5px 0 rgba(122,60,30,0.3);
-}
-
+/* ========== TEAM HERO (FIXED) ========== */
 .team-hero {
-  padding: 100px 48px 80px;
+  padding: 100px 24px 60px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  background: var(--cream);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.t1 { width: 88px; top: 14%; left: 8%; transform: rotate(-9deg); }
-.t2 { width: 64px; bottom: 16%; right: 9%; transform: rotate(6deg); }
-
-.sticker {
-  position: absolute;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.85rem;
-  padding: 9px 13px;
-  border-radius: 2px;
-  line-height: 1.5;
-  pointer-events: none;
-  background: var(--yellow);
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.07), 3px 5px 14px rgba(0,0,0,0.1);
-  top: 18%; right: 8%;
-  transform: rotate(-5deg);
+.team-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-blue);
+  background: rgba(142, 202, 230, 0.15);
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 20px;
 }
 
 .team-hero h1 {
-  font-family: 'Caveat', cursive;
-  font-size: clamp(3.2rem, 8vw, 6rem);
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 16px;
-  line-height: 1.05;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-yellow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .team-hero p {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 1.05rem;
-  color: var(--brown);
-  opacity: 0.75;
-  max-width: 420px;
-  margin: 0 auto;
-  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
+/* ========== TEAM FLEX GRID (CENTERS LEFTOVERS) ========== */
 .team-section {
-  padding: 80px 40px 100px;
-  background-color: #CFC0A4;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(100,80,40,0.05) 3px, rgba(100,80,40,0.05) 4px),
-    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(100,80,40,0.05) 3px, rgba(100,80,40,0.05) 4px);
-  box-shadow: inset 0 6px 32px rgba(0,0,0,0.1), inset 0 -6px 32px rgba(0,0,0,0.06);
+  padding: 40px 24px 100px;
 }
 
-.team-grid {
+.team-grid, .mentor-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 52px;
-  max-width: 1100px;
+  justify-content: center; /* Centers items on the final row perfectly */
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
-  justify-content: center;
-  align-items: flex-start;
 }
 
+/* Modern Card Design */
 .member-card {
-  background: #FEFCF8;
-  border-radius: 1px;
-  padding: 10px 10px 0;
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.07), 6px 12px 32px rgba(0,0,0,0.16);
-  transform: rotate(var(--r, 0deg));
-  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+  background: #fff;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 220px;
-  flex-shrink: 0;
-}
-.member-card:hover {
-  transform: rotate(0deg) scale(1.05) translateY(-8px);
-  z-index: 10;
-  box-shadow: 8px 18px 48px rgba(0,0,0,0.22);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+  text-align: left;
+  
+  /* Flexbox parameters equivalent to minmax layout values */
+  flex: 1 1 260px;
+  max-width: 290px; /* Restricts leftover single cards from stretching too wide */
 }
 
-.card-tape {
-  position: absolute;
-  top: -11px; left: 50%;
-  transform: translateX(-50%) rotate(-1.5deg);
-  width: 64px; height: 20px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,240,140,0.62) 0px,
-    rgba(255,248,180,0.78) 4px,
-    rgba(255,240,140,0.62) 8px
-  );
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  z-index: 2;
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(255, 113, 91, 0.2);
 }
+
+/* Clean up old tape for a cleaner look */
+.card-tape { display: none; }
 
 .member-photo {
   width: 100%;
-  height: 260px;
+  height: 280px;
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--beige);
-  border-radius: 1px;
+  margin-bottom: 20px;
+  position: relative;
 }
+
+.member-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(43,45,66,0.4) 0%, rgba(255,255,255,0) 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.member-card:hover .member-photo::after {
+  opacity: 1;
+}
+
 .member-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
-  display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
+
 .member-card:hover .member-photo img {
-  transform: scale(1.04);
+  transform: scale(1.08);
 }
 
 .member-info {
-  padding: 10px 12px 14px;
-  text-align: center;
+  padding: 0 8px 8px;
 }
 
 .member-info h3 {
-  font-family: 'Caveat', cursive;
-  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 4px;
+  color: var(--text-main);
+  margin-bottom: 8px;
 }
 
 .member-quote {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.82rem;
-  color: var(--ink);
-  line-height: 1.5;
-  opacity: 0.65;
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  color: rgb(194, 169, 87);
+  line-height: 1.3;
 }
 
-.board-tape {
-  width: 72px;
-  height: 20px;
-  margin: 0 auto 16px;
-  transform: rotate(-2deg);
-  border-radius: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,240,140,0.62) 0px,
-    rgba(255,248,180,0.78) 4px,
-    rgba(255,240,140,0.62) 8px
-  );
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
+/* ========== DIVIDERS ========== */
 .section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 40px 80px;
+  gap: 20px;
+  padding: 80px 0 60px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.divider-tape {
-  height: 22px;
-  flex: 1;
-  max-width: 120px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,240,140,0.55) 0px,
-    rgba(255,248,180,0.72) 4px,
-    rgba(255,240,140,0.55) 8px
-  );
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  transform: rotate(-1deg);
-}
+.divider-tape { display: none; }
 
 .divider-label {
-  font-family: 'Caveat', cursive;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #2A1F10;
-  background: #FEFCF8;
-  padding: 6px 24px 8px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.07), 3px 5px 14px rgba(0,0,0,0.12);
-  transform: rotate(-1deg);
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -1px;
   position: relative;
 }
+
 .divider-label::before {
   content: '';
   position: absolute;
-  top: -10px; left: 50%;
-  transform: translateX(-50%) rotate(1deg);
-  width: 48px; height: 18px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255,240,140,0.62) 0px,
-    rgba(255,248,180,0.78) 4px,
-    rgba(255,240,140,0.62) 8px
-  );
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  bottom: 5px;
+  left: -10px;
+  right: -10px;
+  height: 12px;
+  background: rgba(181, 228, 140, 0.4);
+  z-index: -1;
+  border-radius: 4px;
 }
 
-.mentor-section {
-  padding: 80px 40px 100px;
-  background-color: #B8A888;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(80,60,20,0.06) 3px, rgba(80,60,20,0.06) 4px),
-    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(80,60,20,0.06) 3px, rgba(80,60,20,0.06) 4px);
-  box-shadow: inset 0 6px 32px rgba(0,0,0,0.12), inset 0 -6px 32px rgba(0,0,0,0.08);
-}
-
-.mentor-label {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.mentor-label h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 6px;
-}
-
-.mentor-label p {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.95rem;
-  color: var(--brown);
-  opacity: 0.7;
-}
-
-.mentor-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 52px;
-  max-width: 1100px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.mentor-card {
-  width: 220px;
-  flex-shrink: 0;
-}
-
-.mentor-card .member-photo {
-  width: 100%;
-  height: 260px;
-  overflow: hidden;
-  background: var(--beige);
-  border-radius: 1px;
-}
-.mentor-card .member-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.mentor-card .card-tape {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(200,223,245,0.7) 0px,
-    rgba(220,235,255,0.85) 4px,
-    rgba(200,223,245,0.7) 8px
-  );
-}
-
-footer {
-  background: #1A1410;
-  color: rgba(245,240,232,0.55);
-  padding: 52px 24px;
-  text-align: center;
-  border-top: 3px solid rgba(184,92,56,0.4);
-}
-.f-logo {
-  font-family: 'Caveat', cursive;
-  font-size: 1.7rem;
-  color: rgba(245,240,232,0.9);
-  margin-bottom: 12px;
-}
-footer p {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.9rem;
-  line-height: 2;
-}
-.f-insta-label {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(245,240,232,0.35);
-  margin-top: 12px;
-}
-.f-insta {
-  display: inline-block;
-  font-family: 'Patrick Hand', cursive;
-  font-size: 0.9rem;
-  color: rgba(245,240,232,0.65);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(245,240,232,0.25);
-  transition: color 0.2s, border-color 0.2s;
-  line-height: 2;
-}
-.f-insta:hover { color: rgba(245,240,232,0.95); border-color: rgba(245,240,232,0.6); }
-
-.f-small { margin-top: 20px; opacity: 0.35; font-size: 0.78rem; }
-
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  nav {
-    padding: 14px 18px;
+  .team-grid, .mentor-grid {
+    gap: 24px;
   }
-
-  .nav-right {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+  .member-card {
+    flex: 1 1 220px;
+    max-width: 250px;
   }
-
-  .nav-back {
-    width: 100%;
-    text-align: center;
-    padding: 10px 16px;
-  }
-
-  .team-hero {
-    padding: 60px 20px 48px;
-  }
-
-  .sticker {
-    display: none;
-  }
-
-  .team-section {
-    padding: 48px 20px 72px;
-  }
-
-  .section-divider {
-    padding: 28px 20px;
-  }
-
-  .team-grid,
-  .mentor-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-  }
-
-  .member-card,
-  .mentor-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .member-photo,
-  .mentor-card .member-photo {
-    height: 190px;
-  }
-
-  .member-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .member-quote {
-    font-size: 0.78rem;
-    width: 100%;
-  }
+  .member-photo { height: 240px; }
+  .team-hero { padding: 60px 16px 40px; }
 }
 
-@media (max-width: 520px) {
-  .team-grid,
-  .mentor-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    width: 100%;
-  }
-
-  .member-card,
-  .mentor-card {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .member-photo,
-  .mentor-card .member-photo {
-    height: 170px;
+@media (max-width: 480px) {
+  .member-card {
+    flex: 1 1 100%;
+    max-width: 100%; /* Allows full width crisp scaling on narrow mobile displays */
   }
 }
-
