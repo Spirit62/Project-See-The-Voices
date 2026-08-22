@@ -33,3 +33,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.note, .note-paper, .note-torn').forEach(el => {
   revealObserver.observe(el);
 });
+
+document.querySelectorAll('.latest-session').forEach((session, index) => {
+  session.style.setProperty('--session-delay', `${index * 0.55}s`);
+});
