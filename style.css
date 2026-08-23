@@ -228,7 +228,6 @@
 .latest-session-three .latest-session-icon { border-color: var(--accent-yellow); transform: rotate(-3deg); }
 
 .latest-session-icon img { height: 100%; object-fit: cover; width: 100%; }
-.latest-session-icon video { height: 100%; object-fit: cover; width: 100%; }
 .latest-session small { color: var(--text-muted); display: block; font-size: 0.7rem; letter-spacing: 0.12em; margin-bottom: 7px; text-transform: uppercase; }
 .latest-session strong { display: block; font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.25; }
 
@@ -250,6 +249,16 @@
 .latest-sessions-all:hover { color: var(--accent-coral); }
 
 @media (max-width: 768px) {
+  .about-section { padding: 56px 20px 78px; }
+  .about-header { margin-bottom: 38px; }
+  .about-content-wrapper { display: flex; flex-direction: column; gap: 30px; margin-top: 0; }
+  .about-image-2, .about-image-3 { flex: none; margin: 0; width: 100%; }
+  .about-image-2 { align-self: flex-start; max-width: 460px; }
+  .about-image-3 { align-self: flex-end; border-width: 4px; max-width: 300px; }
+  .about-essay { order: 3; }
+  .about-essay p { font-size: 1rem; }
+  .about-essay p:nth-child(2) { font-size: 1.1rem; }
+  .about-btns { flex-wrap: wrap; margin-top: 30px; }
   .latest-session-orbit { grid-template-columns: 1fr; max-width: 560px; }
   .latest-sessions { padding: 70px 20px 80px; }
 }

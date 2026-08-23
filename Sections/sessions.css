@@ -5,7 +5,7 @@
   max-width: 820px;
   margin: 0 auto;
   padding: 72px 24px 42px;
-  text-align: center;
+  text-align: left;
 }
 
 .sessions-kicker, .session-type {
@@ -71,7 +71,7 @@
 
 .session-grid {
   display: grid;
-  gap: 28px;
+  gap: 18px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 auto;
   max-width: 1120px;
@@ -81,31 +81,23 @@
   overflow: hidden;
   position: relative;
   background: #fff;
+  border: 1px solid rgba(43, 45, 66, 0.12);
   border-top: 7px solid var(--accent-coral);
   color: inherit;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  box-shadow: var(--shadow-soft);
-  min-height: 260px;
-  padding: 30px 28px 28px;
+  box-shadow: none;
+  min-height: 280px;
+  padding: 26px 24px 24px;
   position: relative;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.session-card-preview { background: rgba(43, 45, 66, 0.96); color: #fff; display: grid; gap: 12px; grid-template-columns: 82px 1fr; inset: auto 12px 12px; opacity: 0; padding: 12px; position: absolute; transform: translateY(18px); transition: opacity 0.25s ease, transform 0.25s ease; z-index: 2; }
-.session-card-preview img { aspect-ratio: 1; height: 82px; object-fit: cover; width: 82px; }
-.session-card-preview-text { align-self: center; font-size: 0.84rem; line-height: 1.35; }
-.session-card:hover .session-card-preview, .session-card:focus-visible .session-card-preview { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 600px) {
-  .session-card-preview { grid-template-columns: 64px 1fr; }
-  .session-card-preview img { height: 64px; width: 64px; }
-}
-
 .session-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-6px) rotate(-1deg);
+  background: #fffaf3;
+  box-shadow: 8px 8px 0 rgba(43, 45, 66, 0.08);
+  transform: translateY(-4px);
 }
 
 .session-card-blue { border-color: var(--accent-blue); }
@@ -160,7 +152,7 @@ footer > p:nth-of-type(3) a:hover {
   .sessions-hero { padding: 48px 18px 34px; }
   .sessions-section { padding: 0 18px 50px; }
   .session-grid { grid-template-columns: 1fr; gap: 20px; }
-  .session-card { min-height: 230px; }
+  .session-card { min-height: 220px; padding: 24px 20px 22px; }
   .divider-label { font-size: 1.1rem; }
 }
 

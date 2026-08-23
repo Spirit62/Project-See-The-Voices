@@ -4,6 +4,7 @@ const sessionData = {
     title: 'Baal Sewa Foundation / IC Matribhumi',
     lede: 'An early visit focused on meeting learners, building trust, and opening a shared visual language.',
     overview: 'A January visit to Baal Sewa Foundation at IC Matribhumi, with group learning, introductions, and practical signs.',
+    reflection: 'We began by getting to know one another, then let the session grow through introductions, shared practice, and the first small signs of trust.',
     institution: 'Baal Sewa Foundation / IC Matribhumi',
     focus: 'First conversations',
     folder: '01-baal-sewa-matribhum',
@@ -17,6 +18,7 @@ const sessionData = {
     title: 'Leo Club at Clinton School',
     lede: 'A school visit shaped by shared attention, active participation, and plenty of hands in motion.',
     overview: 'Photographs from the February 7 Leo Club visit at Clinton School, where a classroom became a space for shared learning.',
+    reflection: 'The classroom quickly became lively and collaborative. Learners asked questions, practiced together, and made space for one another as they went.',
     institution: 'Clinton School',
     focus: 'Leo Club visit',
     folder: '02-leo-clinton-school',
@@ -30,6 +32,7 @@ const sessionData = {
     title: 'Baal Sewa follow-up',
     lede: 'A return visit that carried the conversation forward through repetition, questions, and familiar faces.',
     overview: 'A June follow-up at Baal Sewa, continuing the work with familiar learners and a growing vocabulary of signs.',
+    reflection: 'Coming back made the learning feel more familiar. We could pick up where we left off, revisit signs, and notice the confidence that had grown.',
     institution: 'Baal Sewa Foundation',
     focus: 'Continuing together',
     folder: '03-baal-sewa-follow-up',
@@ -42,6 +45,7 @@ const sessionData = {
     title: 'BMC College',
     lede: 'A college session about why sign language matters and how access begins with making room for participation.',
     overview: 'At BMC College, a large group gathered for a session on sign language, communication, and inclusion.',
+    reflection: 'This conversation opened out across a larger room, bringing questions about communication and inclusion into focus for the whole group.',
     institution: 'BMC College',
     focus: 'Sign language awareness',
     folder: '04-bmc-college',
@@ -55,6 +59,7 @@ const sessionData = {
     title: 'Malpi',
     lede: 'A lively classroom visit where learners practiced basic introductions and found confidence through repetition.',
     overview: 'The Malpi visit brought learners together for basic introductions, visual prompts, and hands-on practice.',
+    reflection: 'At Malpi, simple introductions became a way into the session. Repeating them together helped the room settle into a relaxed, practical rhythm.',
     institution: 'Malpi',
     focus: 'Everyday introductions',
     folder: '05-malpi',
@@ -68,6 +73,7 @@ const sessionData = {
     title: 'BNKS 1',
     lede: 'A school-room session filled with questions, raised hands, and practical signs for everyday communication.',
     overview: 'At BNKS 1, learners practiced together in a bright, active classroom and made the lesson their own.',
+    reflection: 'There were plenty of questions and raised hands at BNKS 1. The session stayed practical, with learners turning each new sign into something useful.',
     institution: 'BNKS 1',
     focus: 'Learning by doing',
     folder: '06-bnks-1',
@@ -81,6 +87,7 @@ const sessionData = {
     title: 'Trinity +2',
     lede: 'A large-group workshop that brought sign language, access, and curiosity into a shared auditorium.',
     overview: 'The Trinity +2 session gathered a wide audience for a practical introduction to sign language and access.',
+    reflection: 'With so many people in the room, the session became a shared introduction to access: curious, energetic, and grounded in things everyone could try.',
     institution: 'Trinity +2',
     focus: 'Access in a larger room',
     folder: '07-trinity-plus-two',
@@ -94,6 +101,7 @@ const sessionData = {
     title: 'Self Help Nepal',
     lede: 'A community session grounded in participation, peer learning, and the small gestures that make a room welcoming.',
     overview: 'Self Help Nepal hosted a community-focused session with separate photo and video records from the day.',
+    reflection: 'This gathering felt rooted in peer learning. People took part at their own pace, and the small gestures between them made the room feel welcoming.',
     institution: 'Self Help Nepal',
     focus: 'Community participation',
     folder: '08-self-help-nepal',
@@ -107,6 +115,7 @@ const sessionData = {
     title: 'Across the visits',
     lede: 'A small visual index of the year so far: classrooms, presentations, questions, and people learning together.',
     overview: 'A recap drawn from the 2026 archive, connecting the places and people who have shaped the project so far.',
+    reflection: 'Seen together, these visits tell a larger story: different rooms, different groups, and the steady work of making communication more accessible.',
     institution: 'See The Voices Nepal',
     focus: 'The growing archive',
     folder: '09-archive-recap',
@@ -159,7 +168,7 @@ function renderDetailPage(session, sessionNumber) {
   title.textContent = session.title;
   lede.textContent = session.lede;
   paragraphs[0].textContent = session.overview;
-  paragraphs[1].textContent = `The selected archive includes ${session.photos} photographs${session.videos ? ` and ${session.videos} videos` : ''} from this visit. Together they show the practical, people-first work behind the session.`;
+  paragraphs[1].textContent = session.reflection;
   facts[0].textContent = session.institution;
   facts[1].textContent = session.focus;
   figure.classList.remove('session-media-pending');
@@ -186,18 +195,6 @@ function renderSessionCards() {
     card.querySelector('.session-type').textContent = session.date;
     card.querySelector('h3').textContent = session.title;
     card.querySelector(':scope > p:not(.session-type)').textContent = session.overview;
-    const preview = document.createElement('span');
-    preview.className = 'session-card-preview';
-    preview.setAttribute('aria-hidden', 'true');
-    const image = document.createElement('img');
-    image.src = mediaPath(session, 'photo', 0);
-    image.alt = '';
-    preview.append(image);
-    const summary = document.createElement('span');
-    summary.className = 'session-card-preview-text';
-    summary.textContent = session.overview;
-    preview.append(summary);
-    card.append(preview);
   });
 }
 
