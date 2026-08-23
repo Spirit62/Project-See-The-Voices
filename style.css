@@ -228,6 +228,7 @@
 .latest-session-three .latest-session-icon { border-color: var(--accent-yellow); transform: rotate(-3deg); }
 
 .latest-session-icon img { height: 100%; object-fit: cover; width: 100%; }
+.latest-session-icon video { height: 100%; object-fit: cover; width: 100%; }
 .latest-session small { color: var(--text-muted); display: block; font-size: 0.7rem; letter-spacing: 0.12em; margin-bottom: 7px; text-transform: uppercase; }
 .latest-session strong { display: block; font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.25; }
 

@@ -78,6 +78,8 @@
 }
 
 .session-card {
+  overflow: hidden;
+  position: relative;
   background: #fff;
   border-top: 7px solid var(--accent-coral);
   color: inherit;
@@ -89,6 +91,16 @@
   padding: 30px 28px 28px;
   position: relative;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.session-card-preview { background: rgba(43, 45, 66, 0.96); color: #fff; display: grid; gap: 12px; grid-template-columns: 82px 1fr; inset: auto 12px 12px; opacity: 0; padding: 12px; position: absolute; transform: translateY(18px); transition: opacity 0.25s ease, transform 0.25s ease; z-index: 2; }
+.session-card-preview img { aspect-ratio: 1; height: 82px; object-fit: cover; width: 82px; }
+.session-card-preview-text { align-self: center; font-size: 0.84rem; line-height: 1.35; }
+.session-card:hover .session-card-preview, .session-card:focus-visible .session-card-preview { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .session-card-preview { grid-template-columns: 64px 1fr; }
+  .session-card-preview img { height: 64px; width: 64px; }
 }
 
 .session-card:hover {

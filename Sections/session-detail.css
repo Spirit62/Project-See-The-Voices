@@ -14,6 +14,16 @@
 .session-detail-lede { color: var(--text-muted); font-family: 'Caveat', cursive; font-size: 1.75rem; line-height: 1.3; max-width: 520px; }
 .session-detail-image { aspect-ratio: 4 / 3; background: #e8e1d7; border: 10px solid #fff; box-shadow: 12px 14px 0 rgba(255, 183, 3, 0.42), var(--shadow-soft); overflow: hidden; transform: rotate(2deg); }
 .session-detail-image img { height: 100%; object-fit: cover; width: 100%; }
+.session-detail-image video { height: 100%; object-fit: cover; width: 100%; }
+.session-media-pending { align-items: center; color: var(--text-muted); display: flex; font-family: 'Caveat', cursive; font-size: 2rem; justify-content: center; padding: 24px; text-align: center; }
+.session-detail-image .session-gallery-item { height: 100%; width: 100%; }
+.session-gallery { margin-top: 76px; }
+.session-gallery h2 { color: var(--text-main); font-family: 'Caveat', cursive; font-size: 2.2rem; font-weight: 600; margin-bottom: 22px; }
+.session-gallery-grid { display: grid; gap: 16px; grid-template-columns: repeat(4, 1fr); }
+.session-gallery-item { aspect-ratio: 4 / 3; background: #e8e1d7; border: 5px solid #fff; box-shadow: var(--shadow-soft); margin: 0; overflow: hidden; }
+.session-gallery-item img, .session-gallery-item video { height: 100%; object-fit: cover; width: 100%; }
+.session-gallery-item:nth-child(3n + 1) { transform: rotate(-1deg); }
+.session-gallery-item:nth-child(3n + 2) { transform: rotate(1deg); }
 .session-detail-copy { display: grid; gap: 44px; grid-template-columns: 1.2fr 0.8fr; margin-top: 92px; }
 .session-detail-copy p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
 .session-detail-copy p:first-child { border-left: 4px solid var(--accent-coral); color: var(--text-main); font-size: 1.25rem; padding-left: 22px; }
@@ -28,6 +38,7 @@
   .session-detail { padding: 42px 20px 70px; }
   .session-detail-header, .session-detail-copy { grid-template-columns: 1fr; }
   .session-detail-image { max-width: 540px; width: 92%; }
+  .session-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .session-detail-copy { gap: 28px; margin-top: 62px; }
   .session-detail-next { margin-top: 62px; }
 }
